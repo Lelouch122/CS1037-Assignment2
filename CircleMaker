@@ -1,0 +1,110 @@
+/**
+	Represents a Circle with a radius and a center point
+	@author Daniel Gallant 3429145
+*/
+public class Circle{
+	/**
+	 The radius of the circle
+	*/
+	private double radius;
+
+	/**
+		The center point of the circle
+	*/
+	private CartesianPoint center;
+
+	/**
+		Creates a circle object with the given center point and radius
+
+		@param centerIn an object representing the center point
+		@param radiusIn the radius of the new circle
+	*/
+	public Circle(CartesianPoint centerIn, double radiusIn){
+		radius = radiusIn;
+		center = centerIn;
+	}
+
+	/**
+		Creates a circle object with the given center point and radius
+
+		@param x the x-coordinate of circle's the center point
+		@param y the y-coordinate of circle's the center point
+		@param radiusIn the radius of the new circle
+	*/
+	public Circle(double x, double y, double radiusIn){
+		center = new CartesianPoint(x, y);
+		radius = radiusIn;
+	}
+
+	/**
+		Returns the center point of the circle.
+		@return the center point of the circle
+	*/
+	public CartesianPoint getCenter(){
+		return center;
+	}
+
+	/**
+		Return the radius of the circle.
+		@return the circle's radius
+	*/
+	public double getRadius(){
+		return radius;
+	}
+
+	/**
+		Sets a new center point for the object.
+		@param centerIn the new center point of the circle
+	*/
+	public void setCenter(CartesianPoint centerIn){
+		center = centerIn;
+	}
+
+	/**
+		Sets the radius of the circle.
+		@param radiusIn the new radius of the circle.
+	*/
+	public void setRadius(double radiusIn){
+		radius = radiusIn;
+	}
+	/**
+		Returns the shortest distance between the edges of two circles.
+		@return distance The distance between the edges of two circles.
+	*/
+	public double circlesDistance(Circle other)
+	{
+		double circleDistance = this.center.distance(other.center) - (this.getRadius() + other.getRadius()); 
+		if(circleDistance <= 0)
+		{
+			circleDistance = 0;
+		}
+		return circleDistance;
+	}
+	/**
+		Return true or False if the two circles intersect each other.
+		@return intersect True or false based on if the two circles intersect each other.
+	*/
+	public boolean intersectCheck(Circle other)
+	{
+		 return(this.circlesDistance(other) == 0);
+	}
+	/**
+		Checks to see if one circle contains the other.
+		@param other Another circle
+	*/
+	public boolean contains(Circle other)
+	{
+		double checkContains = this.center.distance(other.center) - (this.getRadius() + other.getRadius()); 
+		return (other.getRadius() < checkContains);
+	}
+	/**
+		Checks to see if another point is contained in the Circle calling it.
+		@param other Another point
+	*/
+
+	public boolean contains(CartesianPoint other)
+	{
+		return (center.distance(other) < radius);
+		
+	}
+}
