@@ -1,0 +1,117 @@
+/**
+Creates circles with different values
+@author Daniel Gallant 3429145
+*/
+public class CircleDriver
+{
+	public static void main(String[] args)
+	{
+		Circle C1 = new Circle(70, 150, 150);
+		Circle C2 = new Circle(100, 200, 200);
+		Circle C3 = new Circle(50, 250, 250);
+		Circle C4 = new Circle(50, 300, 300);
+		
+		if(C1.intersectCheck(C2))
+		{
+			System.out.println("C1 intersects with C2");
+		}
+		else
+		{
+			System.out.println("C1 is" + C1.circlesDistance(C2) + "away from C2");
+		}
+
+		if(C1.intersectCheck(C3))
+		{
+			System.out.println("C1 intersects with C3");
+		}
+		else
+		{
+			System.out.println("C1 is" + C1.circlesDistance(C3) + "away from C3");
+		}
+
+		if(C1.intersectCheck(C4))
+		{
+			System.out.println("C1 intersects with C4");
+		}
+		else
+		{
+			System.out.println("C1 is" + C1.circlesDistance(C4) + "away from C4");
+		}
+
+		if(C2.intersectCheck(C3))
+		{
+			System.out.println("C2 intersects with C3");
+		}
+		else
+		{
+			System.out.println("C2 is" + C2.circlesDistance(C3) + "away from C3");
+		}
+
+		if(C2.intersectCheck(C4))
+		{
+			System.out.println("C2 intersects with C4");
+		}
+		else
+		{
+			System.out.println("C2 is" + C2.circlesDistance(C4) + "away from C4");
+		}
+
+		if(C3.intersectCheck(C4))
+		{
+			System.out.println("C3 intersects with C4");
+		}
+		else
+		{
+			System.out.println("C3 is" + C3.circlesDistance(C4) + "away from C4");
+		}
+
+		//Creating a new circle and seeing if it contains any of the other circles
+		
+		Circle C5 = new Circle(60, 100, 100);
+
+		if(C5.contains(C1))
+		{
+			System.out.println("C5 contains C1");
+		}
+		else
+		{
+			System.out.println("C5 does not contain C1");
+		}
+		
+		if(C5.contains(C2))
+		{
+			System.out.println("C5 contains C2");
+		}
+		else
+		{
+			System.out.println("C5 does not contain C2");
+		}
+
+		if(C5.contains(C3))
+		{
+			System.out.println("C5 contains C3");
+		}
+		else
+		{
+			System.out.println("C5 does not contain C3");
+		}
+
+		if(C5.contains(C4))
+		{
+			System.out.println("C5 contains C4");
+		}
+		else
+		{
+			System.out.println("C5 does not contain C4");
+		}
+	}	
+}
+
+
+
+
+
+
+
+
+
